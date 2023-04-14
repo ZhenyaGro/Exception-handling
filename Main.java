@@ -14,6 +14,8 @@ public class Main {
     // System.out.print(i + " ");
     // }
 
-    Seminar2.askFloat();
+    // Seminar2.askFloat();
+
+    Seminar2.task2();
   }
 }
