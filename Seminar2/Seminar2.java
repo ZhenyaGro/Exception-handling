@@ -1,5 +1,9 @@
 package Seminar2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -41,6 +45,25 @@ public class Seminar2 {
     } catch (ArithmeticException e) {
       System.out.println("Catching exception: " + e);
     }
+  }
 
+  /*
+   * 3) Дан следующий код, исправьте его там, где требуется (задание 3
+   * https://docs.google.com/document/d/
+   * 17EaA1lDxzD5YigQ5OAal60fOFKVoCbEJqooB9XfhT7w/edit)
+   */
+  public static void printSum(Integer a, Integer b) throws FileNotFoundException {
+    System.out.println(a + b);
+  }
+
+  /*
+   * 4) Исправьте код, примените подходящие способы обработки исключений:
+   */
+  public static void test() throws IOException {
+    File file = new File("1");
+    file.createNewFile();
+    FileReader reader = new FileReader(file);
+    reader.read();
+    test();
   }
 }
