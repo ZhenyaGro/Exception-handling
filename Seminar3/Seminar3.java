@@ -17,12 +17,25 @@ public class Seminar3 {
    * MyArraySizeException и MyArrayDataException и вывести результат расчета
    * (сумму элементов, при условии что подали на вход корректный массив).
    */
-  public static void checkArray(String[][] array, int rowLength, int colLength) {
+  public static int checkArray(String[][] array, int rowLength, int colLength) {
     if (array.length != colLength)
       throw new MyArraySizeException();
 
-    for (int i = 0; i < array.length; i++)
+    int sum = 0;
+
+    for (int i = 0; i < array.length; i++) {
       if (array[i].length != colLength)
         throw new MyArraySizeException();
+
+      for (int j = 0; j < array[i].length; j++) {
+        try {
+          sum += Integer.parseInt(array[i][j]);
+        } catch (NumberFormatException e) {
+          throw new MyArrayDataException(i, j);
+        }
+      }
+    }
+
+    return sum;
   }
 }

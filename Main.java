@@ -9,6 +9,7 @@ public class Main {
         { "1", "2", "3", "4" }
     };
 
-    Seminar3.checkArray(testArr, 4, 4);
+    int result = Seminar3.checkArray(testArr, 4, 4);
+    System.out.println(result);
   }
 }
